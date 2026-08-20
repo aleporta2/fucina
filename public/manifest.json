@@ -1,0 +1,30 @@
+{
+  "name": "Fucina — Generatori offline",
+  "short_name": "Fucina",
+  "description": "Password, QR code, UUID e hash generati sul tuo dispositivo, anche offline.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E8EAF2",
+  "theme_color": "#6C5CE7",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

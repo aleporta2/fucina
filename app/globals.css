@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-base text-ink font-body antialiased transition-colors duration-300;
+  }
+
+  html.dark body {
+    @apply bg-base-dark text-ink-dark;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-violet/30;
+  }
+
+  /* Visible keyboard focus everywhere (accessibility floor) */
+  :focus-visible {
+    outline: 2px solid #6C5CE7;
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Base neumorphic surface, light + dark variants handled via .dark on <html> */
+  .neu-surface {
+    @apply bg-surface rounded-neu shadow-neu-raised transition-shadow duration-200;
+  }
+  html.dark .neu-surface {
+    @apply bg-surface-dark shadow-neu-raised-dark;
+  }
+
+  .neu-pressed {
+    @apply bg-surface rounded-neu shadow-neu-pressed;
+  }
+  html.dark .neu-pressed {
+    @apply bg-surface-dark shadow-neu-pressed-dark;
+  }
+
+  /* Primary action button: gradient fill, neumorphic press feedback */
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 rounded-neu bg-brand-gradient
+           px-6 py-3 font-display font-medium text-white shadow-neu-raised-sm
+           transition-all duration-150 active:scale-[0.97] active:shadow-neu-pressed
+           hover:brightness-105;
+  }
+
+  /* Icon-only neumorphic button (copy, toggle, etc) */
+  .btn-icon {
+    @apply neu-surface flex h-11 w-11 items-center justify-center rounded-2xl
+           text-ink transition-all duration-150 active:scale-95 active:shadow-neu-pressed;
+  }
+  html.dark .btn-icon {
+    @apply text-ink-dark;
+  }
+
+  /* The "readout" — where generated output lives. This is the signature element. */
+  .readout {
+    @apply neu-pressed relative overflow-x-auto rounded-2xl px-5 py-4 font-mono text-lg
+           tracking-tight text-ink;
+  }
+  html.dark .readout {
+    @apply text-ink-dark;
+  }
+}
