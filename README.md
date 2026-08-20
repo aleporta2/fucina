@@ -74,7 +74,7 @@ Le icone in `public/icons/` sono generate proceduralmente col gradiente
 del brand. Se vuoi un logo diverso, sostituiscile mantenendo le stesse
 dimensioni (192x192, 512x512, 512x512 maskable).
 
-## Note su design system
+## Note su design system 
 
 Tutti i token (colori, ombre neumorfiche, font) sono centralizzati in
 `tailwind.config.js` e `app/globals.css`. Per restare coerenti aggiungendo
